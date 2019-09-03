@@ -139,6 +139,11 @@ open class DiskCache {
                 Log.error(message: "Failed to remove path \(self.path)", error: error)
                 //Log.error(message: "Failed to list directory", error: error)
             }
+            do {
+                try FileManager.default.createDirectory(at: self.folderURL, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                Log.error(message: "Failed to create directory \(self.folderURL.absoluteString)", error: error)
+            }
             if let completion = completion {
                 DispatchQueue.main.async {
                     completion()
