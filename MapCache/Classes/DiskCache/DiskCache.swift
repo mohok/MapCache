@@ -130,15 +130,17 @@ open class DiskCache {
     
     open func removeAllData(_ completion: (() -> ())? = nil) {
         let fileManager = FileManager.default
-        cacheQueue.async(flags: .barrier, execute: {
+        cacheQueue.async(execute: {
             do {
                 let contents = try fileManager.contentsOfDirectory(atPath: self.path)
                 for filename in contents {
                     let filePath = self.folderURL.appendingPathComponent(filename).path
-                    do {
-                        try fileManager.removeItem(atPath: filePath)
-                    } catch {
-                        Log.error(message: "Failed to remove path \(filePath)", error: error)
+                    DispatchQueue.main.sync {
+                        do {
+                            try fileManager.removeItem(atPath: filePath)
+                        } catch {
+                            Log.error(message: "Failed to remove path \(filePath)", error: error)
+                        }
                     }
                 }
                 self.size = self.calculateSize()
