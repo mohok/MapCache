@@ -130,7 +130,7 @@ open class DiskCache {
     
     open func removeAllData(_ completion: (() -> ())? = nil) {
         let fileManager = FileManager.default
-        cacheQueue.async(execute: {
+        cacheQueue.async(flags: .barrier, execute: {
             do {
                 let contents = try fileManager.contentsOfDirectory(atPath: self.path)
                 for filename in contents {
