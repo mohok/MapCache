@@ -132,13 +132,12 @@ open class DiskCache {
         let fileManager = FileManager.default
         cacheQueue.async(execute: {
             do {
-                let contents = try fileManager.contentsOfDirectory(atPath: self.path)
+                let contents = try fileManager.contentsOfDirectory(at: self.folderURL, includingPropertiesForKeys: nil, options: [])
                 for filename in contents {
-                    let filePath = self.folderURL.appendingPathComponent(filename).path
                     do {
-                        try fileManager.removeItem(atPath: filePath)
+                        try fileManager.removeItem(at: filename)
                     } catch {
-                        Log.error(message: "Failed to remove path \(filePath)", error: error)
+                        Log.error(message: "Failed to remove at URL \(filename)", error: error)
                     }
                 }
                 self.size = self.calculateSize()
