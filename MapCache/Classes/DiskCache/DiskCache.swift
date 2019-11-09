@@ -171,22 +171,12 @@ open class DiskCache {
         let fileManager = FileManager.default
         var currentSize : UInt64 = 0
         do {
-            let contents = try fileManager.contentsOfDirectory(atPath: path)
-            for pathComponent in contents {
-                let filePath = folderURL.appendingPathComponent(pathComponent).path
-                do {
-                    let attributes: [FileAttributeKey: Any] = try fileManager.attributesOfItem(atPath: filePath)
-                    if let fileSize = attributes[FileAttributeKey.size] as? UInt64 {
-                        currentSize += fileSize
-                    }
-                } catch {
-                    Log.error(message: "Failed to list directory", error: error)
-                }
-            }
-            
-        } catch {
-            Log.error(message: "Failed to list directory", error: error)
+            currentSize = try fileManager.allocatedSizeOfDirectory(at: folderURL)
         }
+        catch {
+            Log.error(message: "Failed to get size of directory", error: error)
+        }
+        
         return currentSize
     }
     

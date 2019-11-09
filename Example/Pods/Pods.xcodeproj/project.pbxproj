@@ -123,6 +123,8 @@
 		B8F7581AB6F6ED913EE3A3F3FE793516 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD0F5DAA0AC84C5E3ADE087C20B50BA /* Foundation.framework */; };
 		BA214419BDCE5EFA6010C774BBB4FF39 /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1C4B75CD719E8AD97E769A49F5B5D /* Nimble-dummy.m */; };
 		BC7A87EF639D3AF24E7D9357837BCE0A /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F8854B1452DAF39459F6130EE2F3D /* ErrorUtility.swift */; };
+		BF16ECED2376F510006A6BB7 /* AllocatedSizeOfDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF16ECEC2376F510006A6BB7 /* AllocatedSizeOfDirectory.swift */; };
+		BF16ECEE2376F615006A6BB7 /* AllocatedSizeOfDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF16ECEC2376F510006A6BB7 /* AllocatedSizeOfDirectory.swift */; };
 		BF65E582DC473C74A4C10BF2FA79E3EA /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC04D3EEAA8F8036E80694436F56952F /* BeEmpty.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C4C3E4379CEA79AB3CF644511DD327CD /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9958520F6856F8B28758296CE1218EAA /* MatcherFunc.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C9F45732A87AF00221982C75BDF80A27 /* Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82564EA199C083C906B29363A58A4FBA /* Await.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -319,6 +321,7 @@
 		BCED465527A08E254358B62650D56FAE /* NimbleEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleEnvironment.swift; path = Sources/Nimble/Adapters/NimbleEnvironment.swift; sourceTree = "<group>"; };
 		BD474D2F7F9AE0AA3860176E74212815 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Quick/DSL/DSL.swift; sourceTree = "<group>"; };
 		BE5A698D9EC3D7E9ED35208AD7E0EAB7 /* mach_excServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mach_excServer.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.h; sourceTree = "<group>"; };
+		BF16ECEC2376F510006A6BB7 /* AllocatedSizeOfDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllocatedSizeOfDirectory.swift; sourceTree = "<group>"; };
 		BFBBEB9D1116C28BAC9387C4B456865E /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Quick/Filter.swift; sourceTree = "<group>"; };
 		C0394FF6DF789CB88EC2D6690A1057AF /* Pods-MapCache_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MapCache_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C50CA4C1187FB5137D3DADEA78B4FEB0 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
@@ -518,6 +521,7 @@
 				893072C422A47CBA008612A1 /* String+DiskCache.swift */,
 				893072C022A47C76008612A1 /* FileManager+DiskCache.swift */,
 				893072C222A47C9D008612A1 /* MD5.swift */,
+				BF16ECEC2376F510006A6BB7 /* AllocatedSizeOfDirectory.swift */,
 			);
 			name = DiskCache;
 			path = MapCache/Classes/DiskCache;
@@ -923,6 +927,7 @@
 				8992A45822A73FF300C186CA /* MKMapView+MapCache.swift in Sources */,
 				893072D122A49724008612A1 /* FileManager+DiskCache.swift in Sources */,
 				895E71A922B59E8D0006977C /* TileCoordsRegion.swift in Sources */,
+				BF16ECEE2376F615006A6BB7 /* AllocatedSizeOfDirectory.swift in Sources */,
 				895E71A522B59E800006977C /* ZoomRangeIterator.swift in Sources */,
 				893072D622A497B5008612A1 /* MapCacheConfig.swift in Sources */,
 			);
@@ -1010,6 +1015,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF16ECED2376F510006A6BB7 /* AllocatedSizeOfDirectory.swift in Sources */,
 				893072C322A47C9D008612A1 /* MD5.swift in Sources */,
 				A0AB5460A49FEB15D966FF959B3D8E64 /* MapCache-dummy.m in Sources */,
 				893072C922A47D15008612A1 /* Log.swift in Sources */,
